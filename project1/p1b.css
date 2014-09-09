@@ -1,0 +1,29 @@
+.middle {
+    text-align: center;
+}
+
+th {
+    text-align: left;
+}
+
+body {
+    font-family: Tahoma;
+    font-size: 13px;
+}
+
+
+
+
+
+table {
+    border-style: solid;
+    border-width: 10px;
+    border-color: #d0d0ff;
+    padding: 20px;
+}
+
+tr.hidden {
+    font-weight: bold;
+    border-top: 2px solid black;
+    padding-top: 5px;
+}

@@ -1,0 +1,43 @@
+.middle {
+    text-align: center;
+}
+
+th {
+    text-align: left;
+}
+
+body {
+    font-family: Tahoma;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+th {
+    background-color: #687291;
+    color: white;
+}
+
+.odd {
+    background-color: #dfe1e7;
+}
+
+.even {
+    background-color: #eeeff2;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, tr {
+    border: 1px solid white;
+}
+
+.hidden {
+    display: none;
+}

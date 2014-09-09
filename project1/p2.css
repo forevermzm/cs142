@@ -1,0 +1,45 @@
+body {
+    font-family: Tahoma;
+    font-size: 13px;
+}
+
+.navbar .tabs {
+    display: block;
+    float: left;
+    margin: 0 4px;
+
+
+    background-image: url(left.gif), url(right.gif), url(mid.gif);
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-position: 0px 0px, 100% 0%, 0% 0%;
+    border-bottom: 2px solid #cccccc;
+}
+
+.navbar .tabs a{
+    display: block;
+    text-decoration:   none;        /*This will take out the under line of the link.*/
+    padding: 5px 9px 4px 9px;
+    text-align: center;
+    color: inherit;
+    outline: 0;
+}
+
+.navbar a:hover {
+    color: #cc6600;
+}
+
+.navbar a:visited{
+    color: #cc6666;
+}
+
+hr.line {
+    float: left;
+    width: 98%;
+    position:relative;
+
+    margin: 0 0;
+    top: -2px;
+    left: 20px;
+    border: 1px #cccccc solid;
+    z-index: -1;
+}
