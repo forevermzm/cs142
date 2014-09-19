@@ -1,0 +1,38 @@
+<% @page_title = "CS 142 Project 4 by Zhemin Mi" %>
+
+<% @photos.each do |photo|%>
+    <!-- <div class="row"> -->
+        <!-- <div class="col-md-4"> -->
+            <!-- <div class="thumbnail"> -->
+            <div class="photo">
+                <div class="container">
+                    <table>
+                        <tr>
+                            <%= image_tag photo.file_name %>
+                        </tr>
+                        <tr class="createDate">
+                            Created in: <%= photo.date_time %>
+                        </tr>
+                    </table>
+                    <div class="comment">
+                                <table>
+                            <% @comments = Comment.find(:all, :conditions => {:photo_id => photo.id}) %>
+                            <% @comments.each do |comment| %>
+                            <% @user = User.find(:all, :conditions => {:id => comment.user_id})[0] %>
+                            
+                            <tr>
+                                <td class="datetime"><%= comment.date_time %>: </td>
+                                <td>  </td>
+                                <td class="username"> By <%= link_to @user.first_name + " " + @user.last_name + ": ", @user %></td>
+                                <td class="contents"><%= comment.comment %></td>
+                            </tr>
+                            <% end %>
+                            </div>
+                            </table>
+                                        </div>
+                </div>
+                                <hr>
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+<% end%>

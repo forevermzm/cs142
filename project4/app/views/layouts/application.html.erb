@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project4</title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" %>
+    <%= stylesheet_link_tag "http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" %>
+    <%= stylesheet_link_tag "main" %>
+</head>
+<body>
+	<div class="header">
+		<span><h1><%= @page_title %></h1></span>
+	</div>
+
+<%= yield %>
+
+</body>
+</html>
