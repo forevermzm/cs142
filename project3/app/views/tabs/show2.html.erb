@@ -1,0 +1,25 @@
+<% @css = "p2.css" %>
+<% @selected = " class=selected"%>
+
+<div class="navbar">
+    <% @firstRow[0].each do |element| %>
+        <div class="tabs">
+            <a href=<%= element[:url]%> <%= if element[:label] == @firstRow[1] then @selected end%> ><%= element[:label] %></a>
+        </div>
+    <% end %>
+</div>
+
+<hr class="line"></hr>
+<br>
+<br>
+<br>
+<br>
+
+<div class="navbar">
+    <% @secondRow[0].each do |element| %>
+        <div class="tabs">
+            <a href=<%= element[:url]%> <%= if element[:label] == @secondRow[1] then @selected end%> ><%= element[:label] %></a>
+        </div>
+    <% end %>
+</div>
+<hr class="line"></hr>

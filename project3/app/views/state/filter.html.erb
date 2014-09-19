@@ -1,0 +1,13 @@
+<% @pageTitle = "CS 142 Project 3 by Zhemin Mi" %>
+
+<% content_for :left do %>
+<h2> Header </h2>
+<% end %>
+
+        <div>
+            The input string is <font size="3" color="green"><%= @subString %></font>, and filter result is:
+            <% @results.each do |result|%>
+            <br>
+            <span><%= result %></span>
+            <% end%>
+        </div>
