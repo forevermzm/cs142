@@ -1,3 +1,39 @@
+h2 {
+    text-align: center;
+}
+
+.error {
+    color : red;
+}
+
+#comment {
+    width: 800px;
+}
+
+#uploadNewPhoto li{
+    color: blue;
+}
+
+.Sign_Form {
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.options li {
+    display: inline;
+}
+
+.options li a {    
+    text-transform: uppercase;
+}
+
+.error {
+    font-size: 18px;
+    color: red;
+}
+
 .header {
     text-align: center;
     color: blue;

@@ -1,0 +1,17 @@
+<% if session[:current_user_id] then %>
+<h2 class='error'>Please logout first!</h2>
+<% else %>
+<div class="Sign_Form">
+  <h1>Sign Up</h1>
+  <% if flash[:error] %>
+  <h2 class='error'><%= flash[:error] %></h2>
+  <% end %>
+  <%= form_tag :action => 'create' %>
+  <p> FirstName:</br> <%= text_field_tag :first_name%> </p>
+  <p> LastName:</br> <%= text_field_tag :last_name%> </p>
+  <p> Login:</br> <%= text_field_tag :login%> </p>
+  <p> Password:</br> <%= password_field_tag :password%></p>
+  <p> Password Confirmation:</br> <%= password_field_tag :password_confirmation%> </p>
+  <%= submit_tag :Signup %>
+</div>
+<% end %>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% @page_title = "CS 142 Projet 5 by Zhemin Mi" %>
+        <title><%= @page_title %></title>
+        <%= stylesheet_link_tag    "application", media: "all" %>
+        <%= csrf_meta_tags %>
+        <%= stylesheet_link_tag "http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" %>
+        <%= stylesheet_link_tag "http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" %>
+        <%= stylesheet_link_tag "main" %>
+    </head>
+    <body>
+        <div class="header">
+            <h3>Welcome to <%= link_to 'Fakebook', controller: 'users', action: 'index' %>. </h3>
+            <h4>Fakebook is a website developed by Zhemin Mi for CS142 Project 5</h4>
+        </div>
+        <div class="options">
+            <div class="container">
+                <ul class="pull-right">
+                    <% if !session[:current_user_id] then %>
+                    <li><%= link_to 'Login Fakebook', action: "login" %></li>
+                    <li>|</li>
+                    <li><%= link_to 'Signup', action: "new" %></li>
+                    <% else %>
+                    <li><%= link_to 'Hi ' + User.find_by_id(session[:current_user_id]).first_name + ', logout' , controller: 'users', action: 'logout' %></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+        <%= yield %>
+    </body>
+</html>

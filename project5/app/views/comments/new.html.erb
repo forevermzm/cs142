@@ -1,0 +1,32 @@
+<% if @photo then %>
+<div class="photo">
+    <div class="container">
+        <%= image_tag @photo.file_name %>
+        <br>
+        <div class="comment">
+            <% if flash[:error] then %>
+            <p class="error"><%= flash[:error] %></p>
+            <% end %>
+            <table>
+                <% @comments.each do |comment| %>
+                <% @user = User.find(:all, :conditions => {:id => comment.user_id})[0] %>
+                <tr>
+                    <td class="datetime"><%= comment.date_time %>: </td>
+                    <td>  </td>
+                    <td class="username"> By <%= link_to @user.first_name + " " + @user.last_name + ": ", @user %></td>
+                    <td class="contents"><%= comment.comment %></td>
+                </tr>
+                <% end %>
+                <tr>
+                    <%= form_tag(:action => 'create', :photo_id => @photo.id, :user_id => session[:current_user_id]) do %>
+                    <td></td>
+                    <td><%= text_field_tag(:comment) %></td>
+                    <td><%= submit_tag("submit") %></td>
+                    <% end %>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<hr>
+<% end %>

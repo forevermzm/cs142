@@ -1,0 +1,42 @@
+<div class="container">
+    <ul class="pull-left">
+        <div id='uploadNewPhoto'>
+            <li><%= link_to 'Upload new Photo', controller: 'photos', action: 'new' %></li>
+        </div>
+    </ul>
+</div>
+
+<% if @photos then %>
+<% @photos.each do |photo|%>
+<div class="photo">
+    <div class="container">
+        <table>
+            <tr>
+                <%= image_tag photo.file_name %>
+            </tr>
+            <tr class="createDate">
+                Created in: <%= photo.date_time %>
+            </tr>
+        </table>
+        <div class="comment">
+            <table>
+                <% @comments = Comment.find(:all, :conditions => {:photo_id => photo.id}) %>
+                <% @comments.each do |comment| %>
+                <% @user = User.find(:all, :conditions => {:id => comment.user_id})[0] %>
+                
+                <tr>
+                    <td class="datetime"><%= comment.date_time %>: </td>
+                    <td>  </td>
+                    <td class="username"> By <%= link_to @user.first_name + " " + @user.last_name + ": ", @user %></td>
+                    <td class="contents"><%= comment.comment %></td>
+                </tr>
+                <% end %>
+                <% photoPath = '/photos/' + photo.id.to_s + '/comments/new' %>
+                <tr><a href=<%= photoPath %>>Add Comment</a></tr>
+            </table>
+        </div>
+    </div>
+</div>
+<hr>
+<% end %>
+<% end %>
