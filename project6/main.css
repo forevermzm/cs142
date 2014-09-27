@@ -1,0 +1,35 @@
+table {
+    text-align: center;
+}
+
+h1 {
+    color: green;
+}
+
+th {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+td {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.grey-out {
+    color: #C9C9C9;
+}
+
+.highlight {
+    color: #4CBBB0;
+}
+
+.prev {
+    float: left;
+    margin-right: 90px;
+}
+
+.next {
+    position: relative;
+    margin-left: 90px;
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>This is a calendar application</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script type="text/javascript" src="Calendar.js"></script>
+</head>
+
+<body>
+    <div id="div1">
+        
+    </div>
+    <button class='prev' onclick="cal.prev()">prev</button>
+    <button class='next' onclick="cal.next()">next</button>
+
+<script type="text/javascript">
+//<![CDATA[
+    var cal = new Calendar("div1");
+    cal.render(new Date("Feb 25, 2014"));
+//]]>
+</script>
+</body>
+</html>
