@@ -1,0 +1,11 @@
+<div class= "Sign_Form">
+  <h1>Log in</h1>
+  <%= form_tag(:action => 'post_login') do %>
+    <% if flash[:error] then %>
+    <p class="error"><%= flash[:error] %></p>
+    <% end %>
+    <p>Login:</br> <%= text_field_tag(:login) %></p> 
+    <p>Password:</br> <%= password_field_tag(:password) %></p>
+    <%= submit_tag("Log In") %>
+  <% end %>
+</div>

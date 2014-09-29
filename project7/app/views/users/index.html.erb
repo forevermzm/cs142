@@ -1,0 +1,19 @@
+<% if @users then %>
+<div class="users">
+    <div class="container">
+        <div class="row">
+            <% @users.each do |user| %>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <%= link_to user.first_name + " " + user.last_name, user %>
+                    <% @photo = Photo.find_by user_id: user.id %>
+                    <% if @photo then %>
+                    <%= image_tag @photo.file_name %>
+                    <% end %>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+<% end %>

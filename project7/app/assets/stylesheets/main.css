@@ -1,0 +1,78 @@
+h2 {
+    text-align: center;
+}
+
+.error {
+    color : red;
+}
+
+#comment {
+    width: 800px;
+}
+
+#uploadNewPhoto li{
+    color: blue;
+}
+
+.Sign_Form {
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.options li {
+    display: inline;
+}
+
+.options li a {    
+    text-transform: uppercase;
+}
+
+.error {
+    font-size: 18px;
+    color: red;
+}
+
+.header {
+    text-align: center;
+    color: blue;
+}
+
+
+.photo .container img{
+    width: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo .container {
+    text-align: center;
+    font-size: 15px;
+    color: blue;
+}
+
+.comment table{
+    table-layout: fixed;
+}
+
+.comment td {
+    text-align: left;
+    font-size: 15px;
+    display: block;
+    float: left;
+    margin: 0 4px;
+    word-wrap: break-word;
+}
+
+.comment .datetime {
+    color: purple;
+}
+
+.comment .contents {
+    color: black;
+    font-size: 18px;
+    font-family: Tahoma;
+    max-width: 900px;
+}
