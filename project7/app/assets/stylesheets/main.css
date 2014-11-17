@@ -1,3 +1,17 @@
+.photo .container {
+    position: relative;
+}
+
+.rectangle {
+    position: absolute;
+    /*cursor: default;*/
+}
+
+.tag_name {
+    color : black;
+    font-size: 12px;
+}
+
 h2 {
     text-align: center;
 }

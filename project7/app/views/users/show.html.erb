@@ -5,14 +5,38 @@
         </div>
     </ul>
 </div>
-
 <% if @photos then %>
 <% @photos.each do |photo|%>
 <div class="photo">
-    <div class="container">
+    <div class="container" id="<%= "photo" + photo.id.to_s %>">
         <table>
             <tr>
-                <%= image_tag photo.file_name %>
+                <%= image_tag photo.file_name%>
+                <% tags = Tag.find(:all, :conditions => {:photo_id => photo.id}) %>
+                <% if tags then %>
+                <% tags.each do |tag| %>
+                <div class="rectangle" style="left:<%= tag.coor_x %>px; top:<%= tag.coor_y %>px; width:<%= tag.width %>px; height:<%= tag.height %>px; display:block; border:1px solid purple;">
+                    <p class="tag_name"><%= user = User.find_by id: tag.user_id; if user then user.fullname end %></p>
+                </div>
+                <% end %>
+                <% end %>
+                <div class="rectangle" id="<%= "rectangle" + photo.id.to_s %>" >
+                    <%= form_tag('/posts') do -%>
+                    <select id="<%= "select" + photo.id.to_s %>", style="display: none;">
+                        <% @users.each do |user| %>
+                        <option value=<%= user.id %>>
+                            <%= user.fullname %>
+                        </option>
+                        <% end %>
+                    </select>
+                    <input type="hidden" id="<%= "coorX" + photo.id.to_s %>" >
+                    <input type="hidden" id="<%= "coorY" + photo.id.to_s %>" >
+                    <input type="hidden" id="<%= "width" + photo.id.to_s %>" >
+                    <input type="hidden" id="<%= "height" + photo.id.to_s %>" >
+                    <%= tag(:input, :id => "authenticity_token" + photo.id.to_s, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+                    <button id="submitButton", type='button', style="display: none;", onClick="submitTag(<%= photo.id %>)">Submit</button>
+                    <% end -%>
+                </div>
             </tr>
             <tr class="createDate">
                 Created in: <%= photo.date_time %>
@@ -40,3 +64,12 @@
 <hr>
 <% end %>
 <% end %>
+<script type="text/javascript">
+//<![CDATA[
+<% if @photos then %>
+<% @photos.each do |photo| %>
+    new Tagger(<%= "photo" + photo.id.to_s %>, <%= "rectangle" + photo.id.to_s %>, <%= "coorX" + photo.id.to_s %>, <%= "coorY" + photo.id.to_s %>, <%= "width" + photo.id.to_s %>, <%= "height" + photo.id.to_s %>);
+<% end %>
+<% end %>
+//]]>
+</script>

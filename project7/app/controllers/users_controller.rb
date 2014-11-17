@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
     def show
         if loggedIn then
+            @users = User.find(:all);
             @photos = Photo.find(:all, :conditions => {:user_id => params[:id]})
         else
             loginFirst()    

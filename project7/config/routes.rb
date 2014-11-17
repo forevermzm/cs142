@@ -18,6 +18,8 @@ Project4::Application.routes.draw do
   post 'photos/:id/comments/create' => 'comments#create'
   post 'photos/' => 'photos#uploadPhoto'
 
+  post 'tags/new' => 'tags#new'
+
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :users

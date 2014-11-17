@@ -1,8 +1,13 @@
 class User < ActiveRecord::Base
     has_many :photos
     has_many :comments
+    has_many :tags
 
     attr_accessor :password
+
+    def fullname
+        self.first_name + " " + self.last_name
+    end
 
     def password_valid? password
         salt = self.salt

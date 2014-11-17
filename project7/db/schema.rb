@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140921162030) do
+ActiveRecord::Schema.define(version: 20141011021422) do
 
   create_table "comments", force: true do |t|
     t.integer  "photo_id"
@@ -39,6 +39,17 @@ ActiveRecord::Schema.define(version: 20140921162030) do
 
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
+
+  create_table "tags", force: true do |t|
+    t.integer  "photo_id"
+    t.integer  "user_id"
+    t.integer  "coor_x"
+    t.integer  "coor_y"
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"
